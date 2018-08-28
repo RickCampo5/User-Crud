@@ -1,0 +1,13 @@
+<section>
+  <div class="container">
+    <p class="err">{{error}}</p>
+    <h1>Editar</h1>
+    <form action="/board/edit/{{_id}}" method="POST">
+      <input type="text" name="username" value="{{username}}">
+      <input type="email" name="email" value="{{email}}">
+      <input type="password" name="password" placeholder="Nueva Contraseña">
+      <button type="submit">Guardar</button>
+    </form>
+    <a href="/board">Cancelar</a>    
+  </div>
+</section>

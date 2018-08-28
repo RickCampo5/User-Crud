@@ -1,39 +1,33 @@
 body, html {
   padding: 0;
   margin: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
-  color: #000;
-}
+  color: #000; }
 
-nav{
+nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-content: center;
   margin-top: 0;
-  background-color: rgb(255, 157, 0);
-  height: 60px;
-}
+  background-color: #ff9d00;
+  height: 60px; }
 
-.err{
+.err {
   color: red;
-  font-size: 0.7em;
-}
+  font-size: 0.7em; }
 
-.nav-list{
+.nav-list {
   display: flex;
-  flex-direction: row;
-}
+  flex-direction: row; }
 
-li{
+li {
   list-style: none;
-  margin-left: 20px;
-}
+  margin-left: 20px; }
 
-.container{
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,49 +36,44 @@ li{
   height: 500px;
   border-radius: 30px;
   font-size: 2em;
-  margin-top: 100px;
-}
+  margin-top: 100px; }
 
-form{
+form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
-}
+  background-color: white; }
 
-.user-info{
+.user-info {
   display: flex;
-  flex-direction: row;
-}
+  flex-direction: row; }
 
-.list-card{
+.list-card {
   margin-left: 100px;
   width: 400px;
-  margin: 0;
-}
+  margin: 0; }
 
-input{
+input {
   font-size: 0.8em;
   border: none;
   background: 0;
   border-bottom: 1px solid;
   outline: 0;
-  margin-top: 20px;
-}
+  margin-top: 20px; }
 
-button{
+button {
   margin-top: 20px;
   font-size: 0.8em;
-  background-color: rgb(255, 157, 0);
+  background-color: #ff9d00;
   border-radius: 10px;
   min-height: 50px;
-  width: 100px;
-}
+  width: 100px; }
 
-section{
+section {
   display: flex;
   justify-content: center;
   align-content: center;
-  width: 100vw;
-}
+  width: 100vw; }
+
+/*# sourceMappingURL=style.css.map */

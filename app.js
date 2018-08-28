@@ -8,11 +8,13 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
+const session      = require('express-session');
+const MongoStore   = require('connect-mongo')(session);
 
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/user-crud', {useMongoClient: true})
+  .connect(process.env.DB, {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
@@ -30,8 +32,19 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// Express View engine setup
+//Passport
+app.use(session({
+  secret: "Yetcargo",
+  cookie: {maxAge: 60000},
+  resave: true,
+  saveUninitialized: true,
+  store: new  MongoStore({
+    mongooseConnection: mongoose.connection, 
+    ttl:24*60*60
+  })
+}))
 
+// Express View engine setup
 app.use(require('node-sass-middleware')({
   src:  path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
@@ -52,6 +65,8 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 
 const index = require('./routes/index');
+const userBoard = require('./routes/board');
+app.use('/board', userBoard);
 app.use('/', index);
 
 
